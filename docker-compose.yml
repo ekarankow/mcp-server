@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  mcp-server:
+    build: .
+    image: mcp-server:latest
+    environment:
+      FINANCIAL_DATASETS_API_KEY: "twoj_api_key_tutaj"
+      USE_UV: "0"  # ustaw na 1, jeśli chcesz uruchamiać przez uv, inaczej usuń lub ustaw na 0
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
